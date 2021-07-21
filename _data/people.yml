@@ -1,8 +1,10 @@
 
-prof-a:
-    display_name: "Prof A"
+damian_crosby:
+    display_name: "Damian Crosby"
     role: faculty
-
+    image:
+    bio: ""
+    projects:
 prof-b:
     display_name: "Prof B"
     role: faculty

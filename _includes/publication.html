@@ -1,0 +1,9 @@
+
+{% assign publication = include.publication %}
+
+<h2> {{ publication.title }} </h2>
+<h6> {{ publication.published.in }} </h6>
+<div>
+    <li><a href="{{ publication.pdf | escape }}"><i class='fa-solid fa-file-pdf'></i>PDF</a></li>
+    <li><a href="#" onclick="bibtex({{ publication.bibtex }})"><i class="fa-solid fa-quote-right"></i>BibTeX</a></li>
+</div>
