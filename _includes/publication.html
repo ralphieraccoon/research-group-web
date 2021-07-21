@@ -1,9 +1,16 @@
 
 {% assign publication = include.publication %}
-
+<div class="container-fluid publication">
 <h2> {{ publication.title }} </h2>
-<h6> {{ publication.published.in }} </h6>
-<div>
-    <li><a href="{{ publication.pdf | escape }}"><i class='fa-solid fa-file-pdf'></i>PDF</a></li>
-    <li><a href="#" onclick="bibtex({{ publication.bibtex }})"><i class="fa-solid fa-quote-right"></i>BibTeX</a></li>
+<h6> {{ publication.published.in }} - {{ publication.published.when | date: "%B %Y" }} </h6>
+<div class="row align-items-start">
+    {% for author in publication.authors %}
+        {% assign person = site.data.people[author] %}
+        <div class="col"> {% include person.html person=person image=true compact=true %} </div>
+    {% endfor %}
+</div>
+<div class="btn-group" role="group" aria-label="...">
+    <a class="btn btn-secondary" href="{{ publication.pdf | escape }}"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> PDF</a>
+    <a href="#" onclick="bibtex('{{ publication.bibtex }}')" class="btn btn-secondary"><i class="fa fa-quote-right" aria-hidden="true"></i> BiBTeX</a>
+</div>
 </div>

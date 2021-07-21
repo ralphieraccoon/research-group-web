@@ -2,9 +2,9 @@
 damian_crosby:
     display_name: "Damian Crosby"
     role: faculty
-    image:
+    image: /img/people/prof-x.png
     bio: ""
-    projects:
+
 prof-b:
     display_name: "Prof B"
     role: faculty

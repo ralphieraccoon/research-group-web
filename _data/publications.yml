@@ -1,0 +1,23 @@
+
+test-paper:
+    title: "Example Paper"
+    authors:
+        - damian_crosby
+    published:
+        in: "The International Journal of Cheese"
+        when: 2018-10-1
+    abstract: "Cheese is great"
+    bibtex: "Test"
+    source: "Brie"
+
+test-paper-2:
+    title: "Example Paper"
+    authors:
+        - damian_crosby
+    published:
+        in: "The International Journal of Cheese"
+        when: 2018-10-1
+    abstract: "Cheese is great"
+    bibtex: "Test"
+    source: "Brie"
+

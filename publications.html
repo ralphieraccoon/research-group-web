@@ -2,8 +2,10 @@
 layout: default
 title: Publications
 ---
-<p>
-    <a href="{{ site.base }}/bib/pubs.bib">Download BibTeX.</a>
-</p>
 
-{% include pubs.html %}
+    {% for item in site.data.publications %}
+         {% assign publication = item[1] %}
+         {% include publication.html publication=publication %}
+    {% else %}
+    Error, no items!
+    {% endfor %}

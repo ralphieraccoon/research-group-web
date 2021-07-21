@@ -1,6 +1,5 @@
 ---
 ---
----
 
 $gray: #999;
 $light-gray: #EEE;
@@ -105,7 +104,7 @@ section {
     }
 }
 
-.card {
+.card, .publication .person {
 
     .profile {
         height: 40px;
@@ -145,4 +144,18 @@ section {
 svg {
     // make the alignment just like img from bootstrap's reboot.scss
     vertical-align: middle;
+}
+
+.publication {
+    margin-bottom: 1em;
+    margin-top: 1em;
+
+    i {
+        color: white;
+    }
+
+    h6 {
+        margin-bottom: 1em;
+    }
+
 }

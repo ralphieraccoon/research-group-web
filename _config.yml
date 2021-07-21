@@ -4,9 +4,6 @@ url: http://awesome.example.edu
 # colorize code snippets with the pygments module
 highlighter: pygments
 
-# The path structure for blog posts.
-permalink: /blog/:year/:month/:day/:title.html
-
 # Sections on the "people" page.
 people_roles:
     - key: faculty
@@ -27,7 +24,7 @@ project_roles:
       name: PhD Researcher
 
 # Base pathname for links.
-base: ''
+base: 'D:\djcro\research-group-web\_site'
 
 # make pages for the _projects folder
 collections:
