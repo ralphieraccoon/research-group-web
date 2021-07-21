@@ -3,29 +3,50 @@ layout: default
 title: People
 
 picture-role-groups:
-- {roles: [faculty, postdoc, staff], width: 4}
-- {roles: [grad], width: 8}
+    - faculty
+    - postdoc
+    - phd
 
 no-picture-role-groups:
-- {roles: [alum], width: 7}
+    - alum
 ---
 
-<section class="people row justify-content-between">
-    {% for role-group in page.picture-role-groups %}
-        <div class="col-md-{{ role-group.width }}">
-            {% for role in role-group.roles %}
-                {% include role-people.html role=role image=true %}
-            {% endfor %}
-        </div>
+<section class="people justify-content-between">
+    {% for role in page.picture-role-groups %}
+        {% include role-people.html role=role image=true %}
     {% endfor %}
 </section>
 
-<section class="people row justify-content-between">
-    {% for role-group in page.no-picture-role-groups %}
-        <div class="col-md-{{ role-group.width }}">
-            {% for role in role-group.roles %}
-                {% include role-people.html role=role image=false %}
-            {% endfor %}
+<!--<section class="people row justify-content-between">-->
+<!--    {% for role-group in page.no-picture-role-groups %}-->
+<!--        <div class="fluid-container">-->
+<!--            {% for role in role-group.roles %}-->
+<!--                {% include role-people.html role=role image=false %}-->
+<!--            {% endfor %}-->
+<!--        </div>-->
+<!--    {% endfor %}-->
+<!--</section>-->
+
+<div class="modal fade" id="person-modal" tabindex="-1" role="dialog" aria-labelledby="person-modal-label" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-truncate" id="person-modal-label"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div id="photo" class="col-auto">
+                    </div>
+                    <div id="bio" class="col">
+                    </div>
+                </div>
+            </div>
         </div>
-    {% endfor %}
-</section>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="{{ site.base }}js/people-modal.js"></script>

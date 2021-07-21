@@ -1,11 +1,5 @@
 name: Awesome Research Group
-url: http://awesome.example.edu
-
-# colorize code snippets with the pygments module
-highlighter: pygments
-
-# The path structure for blog posts.
-permalink: /blog/:year/:month/:day/:title.html
+url: https://ralphieraccoon.github.io/research-group-web/
 
 # Sections on the "people" page.
 people_roles:
@@ -27,7 +21,7 @@ project_roles:
       name: PhD Researcher
 
 # Base pathname for links.
-base: ''
+base:
 
 # make pages for the _projects folder
 collections:
@@ -37,10 +31,10 @@ collections:
 # Navigation bar links.
 navigation:
     - title: Home
-      link: /
+      link: "./"
     - title: People
-      link: /people.html
+      link: people
     - title: Research
-      link: /research.html
+      link: research
     - title: Publications
-      link: /publications.html
+      link: publications
