@@ -24,7 +24,7 @@ project_roles:
       name: PhD Researcher
 
 # Base pathname for links.
-base: 'D:\djcro\research-group-web\_site'
+base: ''
 
 # make pages for the _projects folder
 collections:
