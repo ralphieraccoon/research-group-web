@@ -4,7 +4,7 @@
 {% for role in site.people_roles %}
     {% if role.key == role-key %}
         <h3 class="pt-3"> {{ role.name }} </h3>
-        <div class="role {{ role.key }}">
+        <div class="d-flex flex-row">
             {% for item in site.data.people %}
                 {% assign person = item[1] %}
                 {% if person.role == role.key %}

@@ -1,9 +1,6 @@
 name: Awesome Research Group
 url: http://awesome.example.edu
 
-# colorize code snippets with the pygments module
-highlighter: pygments
-
 # Sections on the "people" page.
 people_roles:
     - key: faculty
