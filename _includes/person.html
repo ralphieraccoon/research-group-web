@@ -1,6 +1,8 @@
 
 {% assign person = include.person %}
 
+{% assign id = include.id %}
+
 {% assign full = include.full %}
 
 {% comment %}
@@ -24,20 +26,78 @@ there by default by Bootstrap columns.
 {% assign name = person.display_name %}
 
 {% if include.image %}
-    <div class="person person-with-image row p-2 align-items-center">
+        {% if full %}
+        <div class="person person-with-image row p-2 align-items-start">
+        {% else %}
+        <a class="person person-with-image row p-2 col-4 align-items-center" href="/people#{{ id }}">
+        {% endif %}
         <div class="col-auto">
             {% include person-image.html person=person portrait=full %}
         </div>
         <div class="col pl-0">
+            {% if full %}
+            <h4 class="person-name"> {{ name }} </h4>
+            {% else %}
             <h6 class="person-name"> {{ name }} </h6>
+            {% endif %}
             {% if include.job %}
                 {% assign job = include.job %}
                 <div class="bio">{{ job }}</div>
             {% endif %}
+            {% if full %}
+
+            {% assign projects = '' | split: '' %}
+
+            {% for item in site.projects %}
+                {% for item2 in item.people %}
+                    {% if item2.name == id %}
+                        {% assign projects = projects | push: item %}
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+
+            {% assign publications = '' | split: '' %}
+
+            {% for item in site.data.publications %}
+                {% for item2 in item[1].authors %}
+                    {% if item2 == id %}
+                        {% assign publications = publications | push: item[1] %}
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+
+            {% if projects.size != 0 %}
+            <h6 class="heading">Projects</h6>
+            <div class="col">
+                {% for item in projects %}
+                <a class="row" href="{{site.base}}{{item.url}}">{{ item.title }}</a>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% if publications.size != 0 %}
+            <h6 class="heading">Publications</h6>
+            <div class="col">
+                {% for item in publications %}
+                <div class="row d-2 flex-column">
+                    <div class="p-2">{{ item.title }}</div>
+                    <div class="btn-group p-2">
+                        <a class="btn btn-outline-secondary btn-sm" href="{{ item.pdf | escape }}"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+                        <a class="btn btn-outline-secondary btn-sm" href="#" data-toggle="modal" data-target="#bibtex-modal" data-title="{{ publication.title }}" data-bibtex="{{ publication.bibtex }}"><i class="fa fa-quote-right" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endif %}
         </div>
+    {% if full %}
     </div>
+    {% else %}
+    </a>
+    {% endif %}
 {% else %}
     <div class="person person-without-image">
         {{ name }}
     </div>
 {% endif %}
+

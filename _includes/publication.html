@@ -7,7 +7,7 @@
 <div class="row align-items-start">
     {% for author in publication.authors %}
         {% assign person = site.data.people[author] %}
-        <a class="col person-link" href="/people#{{ author }}"> {% include person.html person=person image=true %} </a>
+        {% include person.html id=author person=person image=true %}
     {% endfor %}
 </div>
     <div class="btn-group" role="group" aria-label="...">

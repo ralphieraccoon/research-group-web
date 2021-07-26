@@ -137,6 +137,10 @@ img .rounded {
     .person-name {
         margin: 0;
     }
+
+    .heading  {
+        color: var(--secondary);
+    }
 }
 
 .people .person {
@@ -148,13 +152,18 @@ img .rounded {
 
 }
 
-.person-link {
+// .person {
+//
+//     color: black;
+//     cursor: pointer;
+// }
 
-    color: black;
-    cursor: pointer;
+a {
+      color: black;
+      cursor: pointer;
 }
 
-.person-link:hover {
+a:hover {
 
     text-decoration-line: none;
     color: var(--primary);
@@ -203,3 +212,8 @@ svg {
 
 }
 
+.mini-cite {
+
+    margin-left: 10px;
+
+}
