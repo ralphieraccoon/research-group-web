@@ -1,20 +1,27 @@
 ---
 title: A Project
 
-description: |
+abstract: |
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut hendrerit blandit
   varius. Pellentesque habitant morbi tristique senectus et netus et malesuada
   fames ac turpis egestas.
 
 people:
-  - storm
-  - profx
-  - grad-b
-  - scott
-  - wolverine
+  - name: storm
+    role: super
+  - name: profx
+    role: cosuper
+  - name: grad-b
+    role: phd
+  - name: scott
+    role: phd
+  - name: wolverine
+    role: phd
+    
+last-updated: 2015-05-05
+status: 
 
 layout: project
-last-updated: 2015-05-05
 ---
 
 Proin massa augue, eleifend non ultricies eget, feugiat ut nisl. Fusce at

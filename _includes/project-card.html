@@ -4,7 +4,7 @@
 {% if project.link %}
     {% assign proj-url = project.link %}
 {% else %}
-    {% capture proj-url %}{{site.base}}{{project.url}}.html{% endcapture %}
+    {% capture proj-url %}{{site.base}}{{project.url}}{% endcapture %}
 {% endif %}
 
 <div class="card">
@@ -39,8 +39,8 @@
     {% if project.people %}
         <div class="card-footer d-flex flex-row flex-wrap justify-content-center">
             {% for uname in project.people %}
-                <div>
-                    {% assign person = site.data.people[uname] %}
+                {% assign person = site.data.people[uname] %}
+                <div class="project-person" data-toggle="modal" data-target="#person-modal" data-image="{{ site.base }}{{ person.image }}" data-name="{{ person.display_name }}" data-bio="{{ person.bio }}">
                     {% include person-image.html person=person %}
                 </div>
             {% endfor %}

@@ -29,7 +29,7 @@ body {
 }
 
 .fa {
-    color: $gray;
+    color: black;
 }
 a > .fa {
     // make sure that font-awesome icons are underlined in links
@@ -115,9 +115,13 @@ section {
     .card-footer { padding: 0.5em }
 }
 
-.person {
+img .rounded {
 
-    cursor: pointer;
+    height: 80px;
+    margin: 3px;
+}
+
+.person {
 
     margin-bottom: 10px;
 
@@ -135,11 +139,31 @@ section {
     }
 }
 
-.person:hover {
+.people .person {
 
-    .person-name {
-         color: var(--primary);
-    }
+        .profile {
+            height: 200px;
+            width: auto;
+        }
+
+}
+
+.person-link {
+
+    color: black;
+    cursor: pointer;
+}
+
+.person-link:hover {
+
+    text-decoration-line: none;
+    color: var(--primary);
+}
+
+.project-person {
+
+    cursor: pointer;
+
 }
 
 .person-without-image {
@@ -171,3 +195,11 @@ svg {
     }
 
 }
+
+.btn-link {
+
+    padding-top: 1rem;
+    font-size: 20px;
+
+}
+

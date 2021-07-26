@@ -12,5 +12,5 @@ people:
   - collab-a
 
 layout: project
-link: "https://en.wikipedia.org/wiki/X-Men"
+
 ---

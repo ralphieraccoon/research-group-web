@@ -19,6 +19,8 @@ project_roles:
       name: Co-Investigator
     - key: phd
       name: PhD Researcher
+    - key: pdra
+      name: PDRA Researcher
 
 # Base pathname for links.
 base:
@@ -27,14 +29,15 @@ base:
 collections:
     projects:
         output: true
+        permalink: /:collection/:name
 
 # Navigation bar links.
 navigation:
     - title: Home
-      link: "./"
+      link: "/"
     - title: People
-      link: people
+      link: /people
     - title: Research
-      link: research
+      link: /research
     - title: Publications
-      link: publications
+      link: /publications

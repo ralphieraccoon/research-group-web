@@ -3,12 +3,19 @@
 
 {% for role in site.people_roles %}
     {% if role.key == role-key %}
-        <h3 class="pt-3"> {{ role.name }} </h3>
-        <div class="d-flex flex-row">
+<div class="d-flex flex-row"><h3 class="pt-3"> {{ role.name }} </h3><button class="btn btn-link" data-toggle="collapse" data-target="#{{ role-key }}"><i class="fa fa-caret-down" aria-hidden="true"></i></button></div>
+        <div id="{{ role-key }}" class="collapse show flex-container">
             {% for item in site.data.people %}
                 {% assign person = item[1] %}
                 {% if person.role == role.key %}
-                    {% include person.html person=person image=include.image %}
+                    <div id="{{ item[0] }}">
+                    {% if person.job %}
+                        {% assign job = person.job %}
+                        {% include person.html person=person image=include.image job=job full=true %}
+                    {% else %}
+                        {% include person.html person=person image=include.image full=true %}
+                    {% endif %}
+                    </div>
                 {% endif %}
             {% endfor %}
         </div>

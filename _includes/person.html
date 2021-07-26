@@ -1,6 +1,8 @@
 
 {% assign person = include.person %}
 
+{% assign full = include.full %}
+
 {% comment %}
 
 Usage:
@@ -22,12 +24,16 @@ there by default by Bootstrap columns.
 {% assign name = person.display_name %}
 
 {% if include.image %}
-    <div class="person person-with-image row p-2 align-items-center" data-toggle="modal" data-target="#person-modal" data-image="{{ site.base }}{{ person.image }}" data-name="{{ person.display_name }}" data-bio="{{ person.bio }}">
+    <div class="person person-with-image row p-2 align-items-center">
         <div class="col-auto">
-            {% include person-image.html person=person %}
+            {% include person-image.html person=person portrait=full %}
         </div>
         <div class="col pl-0">
             <h6 class="person-name"> {{ name }} </h6>
+            {% if include.job %}
+                {% assign job = include.job %}
+                <div class="bio">{{ job }}</div>
+            {% endif %}
         </div>
     </div>
 {% else %}

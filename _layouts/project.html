@@ -4,18 +4,23 @@ layout: default
 
 {{ content }}
 
-<h2> People </h2>
-<section class="people project-people">
+<h2> Project Contributors </h2>
+<section class="project-people">
     {% for uname in page.people %}
-        {% assign person = site.data.people[uname] %}
-        {% include person.html person=person image=true%}
+        {% assign person = site.data.people[uname.name] %}
+        {% assign role = site.project_roles | find: "key", uname.role %}
+        <a class="person-link p-2" href="/people#{{ uname.name }}">
+        {% include person.html person=person image=true job=role.name %}
+        </a>
     {% endfor %}
 </section>
 
+{% if page.publications %}
 <h2> Publications </h2>
 <section class="publications">
-    {% for uname in page.people %}
-    {% assign person = site.data.people[uname] %}
-    {% include person.html person=person image=true%}
+    {% for uname in page.publications %}
+    {% assign publication = site.data.publications[uname] %}
+    {% include publication.html publication=publication %}
     {% endfor %}
 </section>
+{% endif %}
