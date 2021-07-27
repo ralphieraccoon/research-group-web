@@ -75,7 +75,7 @@ there by default by Bootstrap columns.
             <div class="d-flex flex-row mt-3"><h6 class="heading">Projects</h6><button class="btn btn-link btn-sm pt-0" data-toggle="collapse" data-target="#projects_{{ id }}"><i class="fa fa-caret-down" aria-hidden="true"></i></button></div>
             <div id="projects_{{ id }}" class="col collapse">
                 {% for item in projects %}
-                <a class="row" href="{{site.base}}{{item.url}}">{{ item.title }}</a>
+                <a class="row" href="{{site.baseurl}}{{item.url}}">{{ item.title }}</a>
                 {% endfor %}
             </div>
             {% endif %}

@@ -1,5 +1,5 @@
 name: Awesome Research Group
-url: https://ralphieraccoon.github.io/research-group-web/
+url: http://ralphieraccoon.github.io/research-group-web
 
 # Sections on the "people" page.
 people_roles:
@@ -23,7 +23,7 @@ project_roles:
       name: PDRA Researcher
 
 # Base pathname for links.
-base:
+baseurl: /research-group-web
 
 # make pages for the _projects folder
 collections:
