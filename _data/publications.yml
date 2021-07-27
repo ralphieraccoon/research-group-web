@@ -8,7 +8,7 @@ test-paper:
         when: 2018-10-1
     abstract: "Cheese is great"
     bibtex: "Test"
-    source: https://ralphieraccoon.github.io/documents/Twisted_String/Paper/paper.pdf
+    source: pdf/paper.pdf
 
 test-paper-2:
     title: "Example Paper"
