@@ -3,7 +3,7 @@
 
 <div class="publication">
     <h4> {{ publication.title }} </h4>
-    <h5> {{ publication.published.in }} - {{ publication.published.when | date: "%B %Y" }} </h5>
+    <h5 class="journal"> {{ publication.published.in }} - {{ publication.published.when | date: "%B %Y" }} </h5>
 <div class="row align-items-start">
     {% for author in publication.authors %}
         {% assign person = site.data.people[author] %}
