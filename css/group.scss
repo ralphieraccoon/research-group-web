@@ -132,6 +132,8 @@ img .rounded {
 
     .bio {
         color: $gray;
+        overflow: auto;
+        height: 50px;
     }
 
     .person-name {
@@ -141,6 +143,12 @@ img .rounded {
     .heading  {
         color: var(--secondary);
     }
+
+    .job {
+
+        margin-bottom: 10px;
+    }
+
 }
 
 .people .person {
@@ -203,17 +211,15 @@ svg {
         margin-bottom: 1em;
     }
 
-}
-
-.btn-link {
-
-    padding-top: 1rem;
-    font-size: 20px;
+    span {
+        font-style: italic;
+        margin-right: 10px;
+    }
 
 }
 
 .mini-cite {
 
     margin-left: 10px;
-
 }
+

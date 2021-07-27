@@ -42,9 +42,14 @@ there by default by Bootstrap columns.
             {% endif %}
             {% if include.job %}
                 {% assign job = include.job %}
-                <div class="bio">{{ job }}</div>
+                <div class="job">{{ job }}</div>
             {% endif %}
             {% if full %}
+            <div class="d-flex flex-row mt-3"><h6 class="heading">About</h6><button class="btn btn-link btn-sm pt-0" data-toggle="collapse" data-target="#bio_{{ id }}"><i class="fa fa-caret-down" aria-hidden="true"></i></button></div>
+            <div id="bio_{{ id }}" class="collapse">
+                {{ person.bio }}
+            </div>
+
 
             {% assign projects = '' | split: '' %}
 
@@ -67,23 +72,23 @@ there by default by Bootstrap columns.
             {% endfor %}
 
             {% if projects.size != 0 %}
-            <h6 class="heading">Projects</h6>
-            <div class="col">
+            <div class="d-flex flex-row mt-3"><h6 class="heading">Projects</h6><button class="btn btn-link btn-sm pt-0" data-toggle="collapse" data-target="#projects_{{ id }}"><i class="fa fa-caret-down" aria-hidden="true"></i></button></div>
+            <div id="projects_{{ id }}" class="col collapse">
                 {% for item in projects %}
                 <a class="row" href="{{site.base}}{{item.url}}">{{ item.title }}</a>
                 {% endfor %}
             </div>
             {% endif %}
             {% if publications.size != 0 %}
-            <h6 class="heading">Publications</h6>
-            <div class="col">
+            <div class="d-flex flex-row mt-3"><h6 class="heading">Publications</h6><button class="btn btn-link btn-sm pt-0" data-toggle="collapse" data-target="#publications_{{ id }}"><i class="fa fa-caret-down" aria-hidden="true"></i></button></div>
+            <div id="publications_{{ id }}" class="col collapse">
                 {% for item in publications %}
-                <div class="row d-2 flex-column">
-                    <div class="p-2">{{ item.title }}</div>
-                    <div class="btn-group p-2">
-                        <a class="btn btn-outline-secondary btn-sm" href="{{ item.pdf | escape }}"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
-                        <a class="btn btn-outline-secondary btn-sm" href="#" data-toggle="modal" data-target="#bibtex-modal" data-title="{{ publication.title }}" data-bibtex="{{ publication.bibtex }}"><i class="fa fa-quote-right" aria-hidden="true"></i></a>
-                    </div>
+                <div class="row mb-1 d-2 flex-column publication">
+                    <div>{{ item.title }}</div>
+                    <div class="mt-1"><span>{{ item.published.in }} - {{ item.published.when | date: "%B %Y" }}</span><div class="btn-group">
+                        <a class="btn btn-secondary btn-sm" href="{{ item.pdf | escape }}"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+                        <a class="btn btn-secondary btn-sm" href="#" data-toggle="modal" data-target="#bibtex-modal" data-title="{{ item.title }}" data-bibtex="{{ item.bibtex }}"><i class="fa fa-quote-right" aria-hidden="true"></i></a>
+                    </div></div>
                 </div>
                 {% endfor %}
             </div>
@@ -101,3 +106,4 @@ there by default by Bootstrap columns.
     </div>
 {% endif %}
 
+{% include publication-modal.html %}
