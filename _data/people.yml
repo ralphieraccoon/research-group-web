@@ -1,9 +1,8 @@
 
 damian_crosby:
     display_name: "Damian Crosby"
-    role: faculty
-    job: Master of Cheese Keeping
-    image: img/people/prof-x.png
+    role: phd
+    image: img/people/damian_crosby.jpg
     bio: "Damian Crosby is a PhD student in the school of Mechanical, Aerospace and Civil Engineering, University of Manchester, Manchester, U.K.
       He received a B.Sc. in Special Effects Development from The University of Bolton, U.K., in 2010, and a M.Res. in Robotics from The University of Plymouth, U.K., in 2012.
       He worked as a Research Technician at The University of Manchester from 2013 to 2017, before commencing his PhD."
