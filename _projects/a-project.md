@@ -17,9 +17,12 @@ people:
     role: phd
   - name: wolverine
     role: phd
+
+publications:
+  - test-paper
     
 last-updated: 2015-05-05
-status: 
+active: 
 
 layout: project
 ---
