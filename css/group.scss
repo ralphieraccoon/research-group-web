@@ -226,3 +226,12 @@ svg {
     margin-left: 10px;
 }
 
+button[aria-expanded="true"] .fa {
+
+  transform: rotate(90deg);
+}
+
+.person .fa {
+
+    color: $gray;
+}
