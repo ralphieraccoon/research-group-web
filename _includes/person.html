@@ -86,7 +86,7 @@ there by default by Bootstrap columns.
                 <div class="row mb-1 d-2 flex-column publication">
                     <div class="font-weight-bold">{{ item.title }}</div>
                     <div class="mt-1"><span>{{ item.published.in }} - {{ item.published.when | date: "%B %Y" }}</span><div class="btn-group">
-                        <a class="btn btn-secondary btn-sm" href="{{ item.source | escape | relative_url }}"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+                        <a class="btn btn-secondary btn-sm" href="{{ item.source | escape | relative_url }}" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
                         <a class="btn btn-secondary btn-sm" href="#" data-toggle="modal" data-target="#bibtex-modal" data-title="{{ item.title }}" data-bibtex="{{ item.bibtex }}"><i class="fa fa-quote-right" aria-hidden="true"></i></a>
                     </div></div>
                 </div>
