@@ -229,6 +229,10 @@ svg {
 button[aria-expanded="true"] .fa {
 
   transform: rotate(90deg);
+}
+
+.flex-row .fa {
+
   cursor: pointer;
 }
 
